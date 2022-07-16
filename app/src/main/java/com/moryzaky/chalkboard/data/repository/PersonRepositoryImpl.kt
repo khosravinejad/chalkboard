@@ -43,4 +43,9 @@ class PersonRepositoryImpl(
     override suspend fun getPersonDetails(id: String): PersonDomainModel? {
         return database.personDao.getPersonDetails(id)?.toDomainModel()
     }
+
+    override suspend fun clearDatabase() {
+        database.personDao.deleteAll()
+        database.personRemoteKeyDao.deleteAll()
+    }
 }

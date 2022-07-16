@@ -11,4 +11,5 @@ import kotlinx.coroutines.flow.Flow
 interface PersonRepository {
     fun getPersons(): Flow<PagingData<PersonDomainModel>>
     suspend fun getPersonDetails(id: String): PersonDomainModel?
+    suspend fun clearDatabase()
 }
