@@ -7,6 +7,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.snackbar.Snackbar
+import com.moryzaky.chalkboard.utils.FailureMessages
 
 /**
  * Created by Morteza Khosravinejad on 16/07/2022.
