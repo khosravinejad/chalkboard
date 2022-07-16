@@ -6,4 +6,5 @@
     <string name="error_unknown">Something\'s wrong. Please try again</string>
     <string name="person_list_activity_title">Birthdays</string>
     <string name="back_button">GO BACK</string>
+    <string name="age">%s years old</string>
 </resources>

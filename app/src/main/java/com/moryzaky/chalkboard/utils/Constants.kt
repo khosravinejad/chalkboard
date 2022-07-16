@@ -8,4 +8,5 @@ object Constants {
     const val PERSON_PER_PAGE = 20
     const val PERSON_INITIAL_PAGE = 1
     const val PERSON_MAX_PAGE = 10 // just for test
+    const val EXTRA_ID = "id"
 }
