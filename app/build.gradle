@@ -17,7 +17,7 @@ android {
         versionName versions.name
         vectorDrawables.useSupportLibrary true
 
-        testInstrumentationRunner "com.moryzaky.chaalk.utils.HiltTestRunner"
+        testInstrumentationRunner "com.moryzaky.chalkboard.utils.HiltTestRunner"
     }
 
     buildTypes {
