@@ -5,7 +5,9 @@ import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
 import com.moryzaky.chalkboard.BuildConfig
 import com.moryzaky.chalkboard.data.model.PersonDataModel
+import com.moryzaky.chalkboard.data.model.PersonRemoteKey
 import com.moryzaky.chalkboard.data.source.local.dao.PersonDao
+import com.moryzaky.chalkboard.data.source.local.dao.PersonRemoteKeyDao
 
 /**
  * Created by Morteza Khosravinejad on 16/07/2022.
@@ -13,7 +15,8 @@ import com.moryzaky.chalkboard.data.source.local.dao.PersonDao
 
 @Database(
     entities = [
-        PersonDataModel::class
+        PersonDataModel::class,
+        PersonRemoteKey::class
     ],
     version = BuildConfig.VERSION_CODE,
     exportSchema = false
@@ -25,4 +28,6 @@ abstract class ChalkBoardDatabase : RoomDatabase() {
     }
 
     abstract val personDao: PersonDao
+    abstract val personRemoteKeyDao: PersonRemoteKeyDao
+
 }
