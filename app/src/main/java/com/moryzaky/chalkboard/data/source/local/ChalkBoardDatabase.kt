@@ -18,6 +18,7 @@ import com.moryzaky.chalkboard.data.source.local.dao.PersonDao
     version = BuildConfig.VERSION_CODE,
     exportSchema = false
 )
+@TypeConverters(DataTypeConverter::class)
 abstract class ChalkBoardDatabase : RoomDatabase() {
     companion object {
         const val DB_NAME = "chalkboard.db"
