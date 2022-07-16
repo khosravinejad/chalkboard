@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.moryzaky.chalkboard">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".ChalkboardApp"
         android:allowBackup="true"
