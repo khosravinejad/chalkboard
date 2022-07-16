@@ -4,4 +4,5 @@
     <string name="error_database">Something\'s wrong in fetch local data.</string>
     <string name="error_server">Error code %s %s</string>
     <string name="error_unknown">Something\'s wrong. Please try again</string>
+    <string name="person_list_activity_title">Birthdays</string>
 </resources>
