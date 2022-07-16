@@ -1,8 +1,203 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+
+    ext.versions = [
+            //meta
+            code            : 1,
+            name            : '1.0.0',
+
+            //build
+            min_sdk         : 23,
+            compile_sdk     : 32,
+            target_sdk      : 32,
+            java            : JavaVersion.VERSION_1_8,
+            kotlin          : '1.5.30',
+
+            //support, AndroidX
+            core            : '1.7.0',
+            app_compat      : '1.4.1',
+            recyclerview    : '1.2.1',
+
+
+            //architecture components
+            lifecycle       : '2.4.1',
+
+            // jetpack components
+            paging          : '3.1.1',
+            room            : '2.4.2',
+
+            //google
+            material        : '1.5.0',
+
+            //dependency injection
+            hilt            : '2.38.1',
+
+            // network
+            retrofit        : '2.9.0',
+            okhttp          : '4.9.0',
+            gson            : '2.8.6',
+
+            // Other libraries
+            glide           : '4.13.0',
+
+            //test
+            junit           : '4.13.2',
+            junit_android   : '1.1.3',
+            espresso        : '3.4.0',
+            mockk           : '1.12.2',
+            core_testing    : '2.1.0',
+            fragment_testing: '1.4.1'
+    ]
+
+    ext.modulez = [
+            //support, AndroidX
+            core                          : 'core-ktx',
+            app_compat                    : 'appcompat',
+            recyclerview                  : 'recyclerview',
+
+
+            //architecture components
+            lifecycle_extensions          : 'lifecycle-extensions',
+            lifecycle_livedata            : 'lifecycle-livedata-ktx',
+            lifecycle_viewmodel           : 'lifecycle-viewmodel-ktx',
+            lifecycle_viewmodel_savedstate: 'lifecycle-viewmodel-savedstate',
+
+            // jetpack components
+            paging                        : 'paging-runtime',
+            room_runtime                  : 'room-runtime',
+            room_ktx                      : 'room-ktx',
+            room_compiler                 : 'room-compiler',
+            room_paging                   : 'room-paging',
+
+
+            //google
+            material                      : 'material',
+
+            //dependency injection
+            hilt_android                  : 'hilt-android',
+            hilt_android_compiler         : 'hilt-android-compiler',
+
+            // network
+            retrofit                      : 'retrofit',
+            retrofit_converter_gson       : 'converter-gson',
+            okhttp                        : 'okhttp',
+            okhttp_logging_interceptor    : 'logging-interceptor',
+            gson                          : 'gson',
+
+            // Other libraries
+            glide                         : 'glide',
+            glide_compiler                : 'compiler',
+
+            //test
+            junit                         : 'junit',
+            junit_android                 : 'junit',
+            espresso                      : 'espresso-core',
+            mockk                         : 'mockk',
+            mockk_android                 : 'mockk-android',
+            core_testing                  : 'core-testing',
+            room_testing                  : 'room-testing',
+            hilt_testing                  : 'hilt-android-testing',
+            fragment_testing              : 'fragment-testing'
+    ]
+
+    ext.groupz = [
+            //support, AndroidX
+            core         : 'androidx.core',
+            app_compat   : 'androidx.appcompat',
+            recyclerview : 'androidx.recyclerview',
+            fragment     : 'androidx.fragment',
+
+            //architecture components
+            lifecycle    : 'androidx.lifecycle',
+
+            // jetpack components
+            paging       : 'androidx.paging',
+            room         : 'androidx.room',
+
+            //google
+            material     : 'com.google.android.material',
+
+            //dependency injection
+            hilt         : 'com.google.dagger',
+
+            // network
+            retrofit     : 'com.squareup.retrofit2',
+            okhttp       : 'com.squareup.okhttp3',
+            gson         : 'com.google.code.gson',
+
+            // Other libraries
+            glide        : 'com.github.bumptech.glide',
+
+            //test
+            junit        : 'junit',
+            junit_android: 'androidx.test.ext',
+            espresso     : 'androidx.test.espresso',
+            mockk        : 'io.mockk',
+            core_testing : 'androidx.arch.core',
+    ]
+
+    ext.deps = [
+            //support, AndroidX
+            androidx_core                 : "$groupz.core:$modulez.core:$versions.core",
+            androidx_appcompat            : "$groupz.app_compat:$modulez.app_compat:$versions.app_compat",
+            recyclerview                  : "$groupz.recyclerview:$modulez.recyclerview:$versions.recyclerview",
+
+            //architecture components
+            lifecycle_extensions          : "$groupz.lifecycle:$modulez.lifecycle_extensions:$versions.lifecycle",
+            lifecycle_livedata            : "$groupz.lifecycle:$modulez.lifecycle_livedata:$versions.lifecycle",
+            lifecycle_viewmodel           : "$groupz.lifecycle:$modulez.lifecycle_viewmodel:$versions.lifecycle",
+            lifecycle_viewmodel_savedstate: "$groupz.lifecycle:$modulez.lifecycle_viewmodel_savedstate:$versions.lifecycle",
+
+            // jetpack components
+            paging                        : "$groupz.paging:$modulez.paging:$versions.paging",
+            room_runtime                  : "$groupz.room:$modulez.room_runtime:$versions.room",
+            room_ktx                      : "$groupz.room:$modulez.room_ktx:$versions.room",
+            room_compiler                 : "$groupz.room:$modulez.room_compiler:$versions.room",
+            room_paging                   : "$groupz.room:$modulez.room_paging:$versions.room",
+
+
+            //google
+            google_material               : "$groupz.material:$modulez.material:$versions.material",
+
+            //dependency injection
+            hilt_android                  : "$groupz.hilt:$modulez.hilt_android:$versions.hilt",
+            hilt_android_compiler         : "$groupz.hilt:$modulez.hilt_android_compiler:$versions.hilt",
+
+            // network
+            retrofit                      : "$groupz.retrofit:$modulez.retrofit:$versions.retrofit",
+            retrofit_converter_gson       : "$groupz.retrofit:$modulez.retrofit_converter_gson:$versions.retrofit",
+            okhttp                        : "$groupz.okhttp:$modulez.okhttp:$versions.okhttp",
+            okhttp_logging_interceptor    : "$groupz.okhttp:$modulez.okhttp_logging_interceptor:$versions.okhttp",
+            gson                          : "$groupz.gson:$modulez.gson:$versions.gson",
+
+            // Other libraries
+            glide                         : "$groupz.glide:$modulez.glide:$versions.glide",
+            glide_compiler                : "$groupz.glide:$modulez.glide_compiler:$versions.glide",
+
+            //test
+            junit                         : "$groupz.junit:$modulez.junit:$versions.junit",
+            junit_android                 : "$groupz.junit_android:$modulez.junit_android:$versions.junit_android",
+            espresso                      : "$groupz.espresso:$modulez.espresso:$versions.espresso",
+            mockk                         : "$groupz.mockk:$modulez.mockk:$versions.mockk",
+            mockk_android                 : "$groupz.mockk:$modulez.mockk_android:$versions.mockk",
+            core_testing                  : "$groupz.core_testing:$modulez.core_testing:$versions.core_testing",
+            room_testing                  : "$groupz.room:$modulez.room_testing:$versions.room",
+            hilt_testing                  : "$groupz.hilt:$modulez.hilt_testing:$versions.hilt",
+            fragment_testing              : "$groupz.fragment:$modulez.fragment_testing:$versions.fragment_testing"
+    ]
+
+    repositories {
+        mavenCentral()
+        google()
+    }
+    dependencies {
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.40.5")
+    }
+}
 plugins {
-    id 'com.android.application' version '7.2.1' apply false
-    id 'com.android.library' version '7.2.1' apply false
-    id 'org.jetbrains.kotlin.android' version '1.7.0' apply false
+    id 'com.android.application' version '7.1.1' apply false
+    id 'com.android.library' version '7.1.1' apply false
+    id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
 }
 
 task clean(type: Delete) {
